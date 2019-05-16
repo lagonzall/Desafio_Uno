@@ -1,3 +1,66 @@
+# Implementación funcionamiento: Desafio_Uno_Luis_Gonzalez
+
+Para que la implementacion pueda funcionar de manera correcta se debe configurar de la siguente forma:
+
+## Servidor de Aplicaciones WildFly V 10.x.x ##
+
+- La carpeta WildFly contiene dos archivos *.properties que hace que el servicio rest funcione correctamente ' wildfly-10.1.0.Final/standalone/configuration ' que son:
+```
+DateGenerateWS.properties
+DateGenerateEJB.properties
+
+```
+## Opciones de Deploy de componentes war y ear ##
+
+- Para poder deployar puede utilizar dos maneras para poder hacerlo efectivo.
+
+```
+1- Se puede deployar los componentes en la carpeta deployments que se encuentra en la carpeta wildfly ' wildfly-10.1.0.Final/standalone/deployments ', los componentes se encuentran compilados en la carpeta target.
+      - war: /Desafio_Uno/Proyect/DateGenerate/DateGenerateWS/target/DateGenerateWS-0.0.1-SNAPSHOT
+
+      - ear: /Desafio_Uno/Proyect/DateGenerate/DateGenerateEJBEAR/target/DateGenerateEJBEAR-0.0.1-SNAPSHOT
+
+2- La segunda opción es desde el IDE de JAVA ya sea Eclipse, Netbeans, JBoss Developer Studio, importando el proyecto como "maven proyect", generar el comando 'mvn clean compile package' y configurar el servidor de aplicaciones wildfly 10 indicando la ruta donde se encuentra la carpeta wildfly-10.1.0.Final
+
+```
+
+## Prueba de servicio ##
+
+- Para poder probar el servicio rest, se debe realizar la siguiente configuracion probando desde un plugin desde el navegador.
+
+```
+PLUGIN REST
+  - RESTer
+    url: https://chrome.google.com/webstore/detail/rester/eejfoncpjfgmeleakejdcanedmefagga    
+  -Postman
+    url: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+
+CONFIG HEADERS
+
+Method:POST
+URL: localhost:8080/DateGenerateWS/api/dateGenerateProyect/DateGenerate
+Name: Content-Type
+Value: application/json
+```
+
+``` json
+
+BODY: 
+{
+    "id": 6,
+    "fechaCreacion": "2000-03-01",
+    "fechaFin": "2010-01-01",
+    "fechas": [
+      "1969-03-01",
+      "1969-05-01",
+      "1969-09-01",
+      "1970-01-01"]
+}
+
+```
+
+
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:
