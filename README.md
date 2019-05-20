@@ -43,6 +43,8 @@ Name: Content-Type
 Value: application/json
 ```
 
+
+
 ``` json
 
 BODY: 
@@ -59,6 +61,23 @@ BODY:
 
 ```
 
+## Ruta de algoritmo ##
+
+- La ruta del algoritmo se encuentra en la siguiente ruta 
+
+```
+Proyect/DateGenerate/DateGenerateEJB/src/main/java/com/cl/proyect/dategenerate/bo/DateGenerateBO.java
+```
+
+## Archivo de salida Json ##
+
+- El archivo de salida llamado ResultDate.json se encuentra en el repositorio principal de Desafio_Uno
+
+``` json
+
+[{"id":6,"fechaCreacion":"1968-07-31","fechaFin":"1971-05-31","fechasFaltantes":["1969-11-01","1969-11-01","1970-10-01","1970-11-01","1969-09-01","1969-10-01","1970-01-01"]}]
+
+```
 
 
 # Desafío 1: Periodos perdidos
